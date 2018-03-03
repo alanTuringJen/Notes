@@ -1,2 +1,66 @@
-* Basic Operation
-- C-c C-e: export org file to other file.
+* Emacs Basic Operation
+
+** 光标操作
+| operation          | effect                                        |
+|--------------------+-----------------------------------------------|
+| M-a                | 右移一个句子                                  |
+| M-e                | 左移一个句子                                  |
+| M-{                | 向上移动一个段落                              |
+| M-<                | 移动到文件头                                  |
+| M->                | 移动到文件尾部                                |
+| M-g g              | goto line n                                   |
+| M-g c              | goto character n                              |
+| C-u number command | 将command执行number次（default：number is 4） |
+
+** 文本的删除
+- C-d 以及 delete 删除的东西无法存储在删除环中，只能用 C-/ 或者 C-x u 来恢复
+| operation | effect                               |
+|-----------+--------------------------------------|
+| C-y       | 恢复之前删除的文字（从删除环中恢复） |
+| C-w       | 删除光标之前的所有文本               |
+| C-SPACE   | Mark set                             |
+| C-x C-x   | 互换插入点与文本标记点之间的位置     |
+| C-t       | 将光标之前的字母向后移               |
+| M-t       | 将光标所在单词向后移                 |
+
+** 查找和替换
+- 递增查找：C-s，进入Isearch模式，然后进行查找
+- 简单查找：多次 C-s，在查找到的不同的地方跳转
+- 查找与替换：M-%，然后按 y 或者 SPACE 用新字符串替代原字符串，n 表示不替换
+
+** 窗口操作
+- C-x s: 保存所有的buffer
+- M-x compare-windows: 对比两个窗口中的文件
+- C-x C-b: 查看当前缓冲区清单
+
+** Dired-mode操作
+| operation | effect                        |
+|-----------+-------------------------------|
+| C-x d     | open dired-mode               |
+| C         | copy file                     |
+| d         | 给文件加上待删除标记          |
+| D         | 以问答形式立即删除文件        |
+| e         | edit file                     |
+| P         | paste file                    |
+| R         | rename file                   |
+| v         | 查看文件内容                  |
+| x         | 删除加有待删除“D”符号的文件 |
+| Z         | 压缩、解压缩                  |
+| +         | 创建一个目录                  |
+| >         | 移动到下一个目录              |
+| <         | 移动到上一个目录              |
+
+** 时间管理工具
+- M-x display-time: 显示时间
+- M-x calendar: 显示日历，然后按“a”显示节假日
+** others
+| operation     | effect                        |
+|---------------+-------------------------------|
+| C-c C-e       | export org file to other file |
+| C-x C-s       | save file                     |
+| C-x C-w       | save and rename current file  |
+| C-h t         | help with tutorial            |
+| C-x i         | insert file                   |
+| C-h k command | 查找command的用法说明         |
+| C-h f         | 让emacs对某个函数进行解释     |
+| C-h i         | open info                     |

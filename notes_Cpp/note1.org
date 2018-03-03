@@ -1,0 +1,78 @@
+* 基本操作 2018.3.2
+** 数学函数：
+#include <cmath>
+*** 三角函数：
+	sin()	cos()	 tan()
+	asin() 	 acos()	 atan()
+*** 指数函数：
+	exp(x) = e^x	pow(a, b) = a^b    log(x)    sprt(x)    log10(x)
+*** 近似函数：
+	ceil(x)：x 被向上取整（数轴上），返回double类型的值    ceil(2.1) = 3.0
+	floor(x)：x 被向下取整（数轴上），返回double类型的值
+*** min()、max()和abs()
+** 计算三角形的角:
+	A = acos((a*a - b*b - c*c) / (-2*b*c));
+	B = acos((b*b - a*a - c*c) / (-2*a*c));
+	C = acos((c*c - b*b - a*a) / (-2*a*b));
+** static_cast<>()
+	cout << static_cast<int>('a'); // Output: 97
+	cout << static_cast<char>('a'); // Output: a
+** 字符串：
+*** string对象的简单函数：
+（前提：#include <string>）
+	length() 返回字符串中的字符个数
+	size() 同length()
+	at(index) 返回字符串中指定位置的字符
+*** 连接字符串：
+	string s1 = "alan", s2 = " is a strdent.";
+	s3 = s1 + s2;
+*** 比较字符串：
+	==    !=    <    <=    >    >=
+*** 读字符串：
+	cin >> s;
+	getline(cin, s);
+** 格式化控制台输出：
+(#include <iomanip>)
+	setprecision(n) 设定一个浮点数的输出位数，不包括小数点位
+	fixed 强制熟悉显示为非科学计数法形式，默认显示的小数位数是6， 可以与setprecision(n)一起使用
+		  cout << fixed << setprecision(2)
+		  	   << variables << endl; // 显示的数字位数是2
+	showpoint
+	setw(width) 指定打印字段的宽度
+	left 调整输出到左边
+	right 调整输出到右边
+		  cout << right;
+		  cout << setw(20) << variables << endl; // 与setw一起使用才会有效果
+** 文件操作
+*** 写入文件:
+#+BEGIN_SRC cpp
+  #include <fstream>
+  int main() {
+    ofstream output;
+      output.open("test.txt");
+      output << "Hello, file operation." << endl;
+      output.close();
+      cout << "Done" << endl;
+      return 0;
+      
+  }
+#+END_SRC
+*** 读取文件：
+#+BEGIN_SRC cpp
+  #include <fstream>
+  int main() {
+    ifstream input;
+    input.open("test.txt");
+    string s;
+    input >> s;
+    input.close();
+    cout << s << endl;
+    return 0;
+  }
+#+END_SRC
+Notice: 这两步操作，在程序结束前调用close()函数很有必要，它能保证在程序正常进行。
+*** 输入输出重定向：
+	first.exe < test.txt > output.txt   将输入重定向到test.txt文件，输出重定向到output.txt文件
+		while (!input.eof()) { … } // Continue if not end of file.
+
+Notice：for循环组成的计数器，尽量用整数作为计数变量，因为计算机中，浮点数是被近似值表示的，用浮点数会造成边界判断模糊的问题。

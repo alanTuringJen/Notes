@@ -1,0 +1,54 @@
+* org-mode Notes
+** 文档结构
+*** 移动
+| C-c C-n | 下个标题     |
+|---------+--------------|
+| C-c C-p | 上个标题     |
+| C-c C-f | 下个同级标题 |
+| C-c C-b | 上个同级标题 |
+| C-c C-u | 回到上层标题 |
+
+*** 结构编辑
+| M-RET          | 插入一个同级标题                        |
+|----------------+-----------------------------------------|
+| M-S-RET        | 插入一个和当前标题同级的TODO项          |
+| M-left/right   | 将当前的标题提升/降低一个档次           |
+| M-S-left/right | 将当前子标题提升/降低一个档次           |
+| M-S-up/down    | 将子树上/下移动(与同级前 or 后子树交换) |
+
+*** 文本列表
+- 无序列表：以‘-’‘+’‘*’开头
+- 有序列表：以‘1.’‘1)’开头
+- 描述列表：以‘::’将项与描述分开
+| M-S-up/down    | 将当前的项与同级项上/下移动    |
+|----------------+--------------------------------|
+| M-left/right   | 提升/降低项的缩进，不包含子项  |
+| M-S-left/right | 提升/降低项的缩进，包含子项    |
+| C-c -          | 循环改变当前列表的项的标记符号 |
+
+** 表格
+- 在表格内部输入 TAB、RET 或者 C-c C-c 时，表格会自动调整
+- C-c RET: 快速建立表格
+- C-c |: 建立一个表格
+| M-left/right | 左右移动当前列              |
+|--------------+-----------------------------|
+| M-up/down    | 上下移动当前行              |
+| M-S-left     | delete current column       |
+| M-S-right    | create a column in the left |
+| M-S-up       | delete current line         |
+| M-S-down     | create a line in the top    |
+| C-c -        | 当前行下添加水平线          |
+| C-c RET      | 建立水平线，而且新建一行    |
+
+** 待办事项
+| C-c C-t | unmarked -> TODO -> DONE循环切换 |
+|---------+----------------------------------|
+| S-M-RET | 在当前项下插入一个新的TODO项     |
+
+** Export
+| C-c C-e h | Export to HTML file                                     |
+|-----------+---------------------------------------------------------|
+| C-c C-e b | Export to HTML file and open with browser               |
+| C-c C-e l | Export to LaTex file                                    |
+| C-c C-e p | Export to Latex file and change to PDF file             |
+| C-c C-e d | Export to LaTex file and change to PDF file and open it |

@@ -1,5 +1,4 @@
 * Emacs Basic Operation
-
 ** 光标操作
 | operation          | effect                                        |
 |--------------------+-----------------------------------------------|
@@ -42,7 +41,7 @@
 | D         | 以问答形式立即删除文件        |
 | e         | edit file                     |
 | P         | paste file                    |
-| R         | rename file                   |
+| R         | rename file(move file)        |
 | v         | 查看文件内容                  |
 | x         | 删除加有待删除“D”符号的文件 |
 | Z         | 压缩、解压缩                  |
@@ -64,3 +63,7 @@
 | C-h k command | 查找command的用法说明         |
 | C-h f         | 让emacs对某个函数进行解释     |
 | C-h i         | open info                     |
+| C-h v         | 查看变量的文档                |
+| C-h f         | 查看命令的文档                |
+| C-h k         | 查看快捷键的文档              |
+
